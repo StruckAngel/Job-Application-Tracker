@@ -1,3 +1,3 @@
 #!/bin/bash
-
-python .venv/bin/python main.py
+cd "$(dirname "$0")"
+.venv/bin/python main.py
