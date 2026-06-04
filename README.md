@@ -4,6 +4,8 @@ A basic Job application tracker to see what jobs you applied to and the progress
 
 This currently only tracks Company, Position, Location, On-site/remote, and progress.
 
+I have not or will not use AI generated code for this project.
+
 ## How to run
 
 ### Linux
