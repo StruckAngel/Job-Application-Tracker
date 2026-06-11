@@ -12,7 +12,8 @@ I have not or will not use AI generated code for this project. I am using this p
 Run start.sh
 
 ### Windows
-Run start.bat
+~Run start.bat~
+I'll get this working later, I"m not too familiar with batch.
 
 
 ## Plan
