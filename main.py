@@ -1,7 +1,7 @@
 # Packages
 
+from db import add_job
 import os
-import sqlite3
 from datetime import date
 
 # Sets workign directory
@@ -20,10 +20,12 @@ jobDescription = input("Enter Description: ")
 today = str(date.today())
 spacingBar = " -- "
 
+#debug
 print(today)
 
-text = (f"+ {companyName} -- {positionName} -- {jobCity} -- {jobState} -- {jobStatus[0] -- {today}")
+text = (f"+ {companyName} -- {positionName} -- {jobCity} -- {jobState} -- {jobStatus[0]} -- {today}\n")
 
+# Debug
 print(text)
 
 # writes into markdown file
@@ -36,30 +38,5 @@ with open(f"description/{text}", "w") as f:
     f.write(jobDescription)
 
 
+add_job(companyName, positionName, jobCity, jobState, jobSite, jobStatus, jobDescription, today)
 
-# SQL selection
-con = sqlite3.connect("tracker.db")
-cur = con.cursor()
-
-cur.execute("""
-CREATE TABLE IF NOT EXISTS application(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    company TEXT,
-    position TEXT,
-    city TEXT,
-    state TEXT,
-    site TEXT,
-    description TEXT,
-    status TEXT CHECK(status IN ('In Progress', 'Ghosted', 'Rejected')),
-    date TEXT
-)
-""")
-
-
-cur.execute(
-    "INSERT INTO application (company, position, city, state, site, description, status, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-    (companyName, positionName, jobCity, jobState, jobSite, jobDescription, jobStatus[0], today)
-)
-
-con.commit()
-con.close()
