@@ -8,6 +8,15 @@ I have not or will not use AI generated code for this project. I am using this p
 
 ## How to run
 
+Run
+```
+pip install -r requirements.txt
+# if you want to use AI
+llm keys set deepseek
+or 
+llm keys set openai 
+```
+
 ### Linux
 Run start.sh
 
@@ -24,15 +33,16 @@ I'll get this working later, I"m not too familiar with batch.
 
 3. Graphical output to see total jobs applied to with results. Providing statistics too.
 
+
 ### Ideas
 
 + ~Create a backend with SQL~
 
-+ Implement AI to take take the whole job description and gives feedback if job matches your experience. Then gives you a chance of a call back. 
++ ~Implement AI to take take the whole job description and gives feedback if job matches your experience. Then gives you a chance of a call back.~
 
 + Improve input
 
-+ GUI
++ ~GUI~
 
 + Add a cool graph to show for results. Like Total amount ghosted, Rejcted after the user was able to find a job.
 

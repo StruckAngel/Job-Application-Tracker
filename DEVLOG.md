@@ -11,3 +11,6 @@ https://textual.textualize.io/blog/2023/10/04/announcing-textual-plotext/
 6/17/26
 I added a db.py file to separate the datebase query code from the main script
 
+6/19/26
+I implemented textualize and the ai helper 
+
