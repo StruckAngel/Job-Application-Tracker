@@ -16,7 +16,7 @@ def add_job(
     cur = con.cursor()
 
     cur.execute("""
-    CREATE TABLE IF NOT EXISTS application(
+    CREATE TABLE IF NOT EXISTS applications(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         company TEXT,
         position TEXT,
@@ -31,7 +31,7 @@ def add_job(
 
 
     cur.execute(
-        "INSERT INTO application (company, position, city, state, site, description, status, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO applications (company, position, city, state, site, description, status, date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
         (companyName, positionName, jobCity, jobState, jobSite, jobDescription, jobStatus[0], today)
     )
 

@@ -22,8 +22,16 @@ jobStatus = ["In Progress", "Ghosted", " Rejected"]
 MODEL = "deepseek-reasoner"
 
 # Markdown applications
-with open ("Job-Application-List.md", "r") as f:
-    applicationMarkdown = f.read()
+file_path = "Job-Application-List.md"
+if os.path.isfile(file_path):
+    with open (file_path, "r") as f:
+        applicationMarkdown = f.read()
+else: 
+    with open (file_path, "w") as f:
+        f.write("# Applications\n")
+    with open (file_path, "r") as f:
+        applicationMarkdown = f.read()
+
 
 # The system prompt
 with open("system.md", "r") as f:
@@ -45,7 +53,7 @@ def add_job_md(companyName, positionName, jobCity, jobState, jobSite, jobStatus,
     with open("Job-Application-List.md", "a") as f:
         f.write(text)
 
-    text = (f"{companyName}-{positionName}-{today}")
+    text = (f"{companyName}-{positionName}-{today}").replace("/","").replace(" ","")
 
     #Archieve job description
     with open(f"description/{text}", "w") as f:
